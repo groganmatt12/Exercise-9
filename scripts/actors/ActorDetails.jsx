@@ -14,7 +14,7 @@ export default class ActorDetails extends React.Component {
             actor_name : actors[0].actor_name,
             character_name : actors[0].character_name,
             bio : actors[0].bio
-        }
+        };
     }
     getActorIndex(actorName) {
         let actorIndex = 0;
@@ -29,24 +29,23 @@ export default class ActorDetails extends React.Component {
     
     setActorDetails(index) {
         this.setState ( {
-            actor_name : actors[index].actor_name, character_name : actors[index].character_name, bio : actors[index].bio
+            actor_name : actors[index].actor_name,
+            character_name : actors[index].character_name, 
+            bio : actors[index].bio
         } );
     }
     
     componentWillReceiveProps(nextProps) {
         let name = nextProps.params.actorName;
-        let index = this.setActorDetails(index);
+        let index = this.getActorIndex(name);
+        this.setActorDetails(index);
     }
     
     render() {
         return(
             <div>
-                <h3>
-                    {this.state.actor_name}
-                </h3>
-                <h4>
-                    Character Played: {this.state.character_name}
-                </h4>
+                <h3>{this.state.actor_name}</h3>
+                <h4>Character Played: {this.state.character_name}</h4>
                 <p>{this.state.bio}</p>
             </div>
         );

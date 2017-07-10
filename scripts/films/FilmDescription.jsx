@@ -34,7 +34,11 @@ export default class FilmDescription extends React.Component {
   }
 
   setFilmDetails(index) {
-    this.setState( { id : films[index].id, title: films[index].title, synopsis: films[index].synopsis });
+    this.setState( { 
+        id : films[index].id, 
+        title: films[index].title, 
+        synopsis: films[index].synopsis 
+    });
   }
 
   render() {

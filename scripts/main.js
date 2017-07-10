@@ -13,12 +13,15 @@ ReactDOM.render(
     <Router history={browserHistory}> 
         <Route path="/" component={App}>
             <IndexRoute component={Home} /> 
+    
             <Route path="/films" component={Films}> 
                 <Route path="/films/:filmName" component={FilmDescription} />
             </Route>
-            <Route path="/actors" content={Actors}>
+    
+            <Route path="/actors" component={Actors}>
                 <Route path="/actors/:actorName" component={ActorDetails} />
             </Route>
+    
         </Route>
     </Router>,
     document.querySelector('#app')
